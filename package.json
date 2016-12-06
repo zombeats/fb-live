@@ -1,0 +1,14 @@
+{
+  "name": "fb-live",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "keywords": [],
+  "scripts": {
+    "start": "browser-sync start --server --files 'index.html'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "license": "ISC"
+}
