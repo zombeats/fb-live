@@ -4,7 +4,7 @@ $(function() {
   var POST_ID = '1137879162976857'; // PASTE HERE YOUR POST ID
   var REFRESH_TIME_ON_SECONDS = 1;
   var DEFAULT_COUNT = 0;
-  var IS_PRODUCTION = true;
+  var IS_PRODUCTION = false;
 
   var REACTIONS = [
     'LIKE',
@@ -14,15 +14,17 @@ $(function() {
     'SAD',
     'ANGRY'
   ].map(function(reaction) {
-     var code = 'reactions_' + reaction.toLowerCase();
-     var val = 'reactions.type('
-     val =+ reaction
-     val =+ ').limit(0).summary(total_count).as(' + code + ')'
-     return val
+    var code = 'reactions_' + reaction.toLowerCase();
+    var select = 'reactions.type('
+    select += reaction
+    select += ').limit(0).summary(total_count).as('
+    select += code
+    select += ')'
+    return select
   }).join(',');
 
   var URL =
-    'http://cors.io/?u=https://graph.facebook.com/v2.8/?ids=' + POST_ID +
+    'https://graph.facebook.com/v2.8/?ids=' + POST_ID +
     '&fields=' + REACTIONS +
     '&access_token=' + ACCESS_TOKEN;
 
@@ -43,6 +45,8 @@ $(function() {
       })
     });
   }
+
+  refreshCounts()
 
   if (IS_PRODUCTION) setInterval(refreshCounts, REFRESH_TIME_ON_SECONDS * 1000);
 })
