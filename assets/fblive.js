@@ -1,10 +1,10 @@
 $(function() {
   'use strict'
   var ACCESS_TOKEN = '1795140000768189|uqasdzez1CahupWwTL5SF1NQ2eA'
-  var POST_ID = '1794006357546537'; // PASTE HERE YOUR POST ID
+  var POST_ID = '1137879162976857'; // PASTE HERE YOUR POST ID
   var REFRESH_TIME_ON_SECONDS = 1;
   var DEFAULT_COUNT = 0;
-  var IS_PRODUCTION = false;
+  var IS_PRODUCTION = true;
 
   var REACTIONS = [
     'LIKE',
