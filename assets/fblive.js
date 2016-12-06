@@ -22,7 +22,7 @@ $(function() {
   }).join(',');
 
   var URL =
-    'https://graph.facebook.com/v2.8/?ids=' + POST_ID +
+    'http://cors.io/?u=https://graph.facebook.com/v2.8/?ids=' + POST_ID +
     '&fields=' + REACTIONS +
     '&access_token=' + ACCESS_TOKEN;
 
