@@ -42,6 +42,7 @@ $(function () {
   function refreshCounts () {
     $.getJSON(URL, function (res) {
       COUNTERS.forEach(function (counter, index) {
+        console.log(res)
         var counterValue = res[POST_ID][counter.name].summary.total_count
         counter.el.text(DEFAULT_COUNT + counterValue)
       })
