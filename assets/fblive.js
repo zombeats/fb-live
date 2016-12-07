@@ -31,19 +31,20 @@ $(function () {
     '&callback=?' // JSONP
 
   var COUNTERS = [
-    { el: $('counter1'), name: 'reactions_like' },
-    { el: $('counter2'), name: 'reactions_love' },
-    { el: $('counter3'), name: 'reactions_sad' },
-    { el: $('counter4'), name: 'reactions_haha' },
-    { el: $('counter5'), name: 'reactions_angry' },
-    { el: $('counter6'), name: 'reactions_wow' }
+    { el: $('.counter-1'), name: 'reactions_like' },
+    { el: $('.counter-2'), name: 'reactions_love' },
+    { el: $('.counter-3'), name: 'reactions_sad' },
+    { el: $('.counter-4'), name: 'reactions_haha' },
+    { el: $('.counter-5'), name: 'reactions_angry' },
+    { el: $('.counter-6'), name: 'reactions_wow' }
   ]
 
   function refreshCounts () {
     $.getJSON(URL, function (res) {
+      res = res[POST_ID]
+
       COUNTERS.forEach(function (counter, index) {
-        console.log(res)
-        var counterValue = res[POST_ID][counter.name].summary.total_count
+        var counterValue = res[counter.name].summary.total_count
         counter.el.text(DEFAULT_COUNT + counterValue)
       })
     })
