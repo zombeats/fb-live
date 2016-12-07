@@ -49,5 +49,5 @@ $(function () {
     })
   }
 
-  if (IS_PRODUCTION) setInterval(refreshCounts, REFRESH_TIME_ON_SECONDS * 1000)
+  if (IS_PRODUCTION) setInterval(refreshCounts, REFRESH_TIME_ON_SECONDS * 500)
 })
