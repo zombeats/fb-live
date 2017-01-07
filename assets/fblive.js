@@ -2,7 +2,7 @@
 $(function () {
   'use strict'
   var ACCESS_TOKEN = '1795140000768189|uqasdzez1CahupWwTL5SF1NQ2eA'
-  var POST_ID = '1166181600146613'
+  var POST_ID = '1166564290108344'
   var REFRESH_TIME_ON_SECONDS = 1
   var DEFAULT_COUNT = 0
   var IS_PRODUCTION = true
