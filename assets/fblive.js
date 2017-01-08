@@ -2,7 +2,7 @@
 $(function () {
   'use strict'
   var ACCESS_TOKEN = '1795140000768189|uqasdzez1CahupWwTL5SF1NQ2eA'
-  var POST_ID = '1166567036774736'
+  var POST_ID = '1167016920063081'
   var REFRESH_TIME_ON_SECONDS = 1
   var DEFAULT_COUNT = 0
   var IS_PRODUCTION = true
@@ -46,8 +46,10 @@ $(function () {
       var totalCounts = 0;
       COUNTERS.forEach(function (counter, index) {
         var counterValue = Number(res[counter.name].summary.total_count);
+        if(counter.progress[0]){
         totalCounts = totalCounts + Number(counterValue);
         counter.el.text(DEFAULT_COUNT + counterValue)
+        }
       })
       COUNTERS.forEach(function (counter, index) {
         var counterValue = Number(res[counter.name].summary.total_count);
